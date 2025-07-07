@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'reminders',
     'crispy_forms',
     'crispy_bootstrap5',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
