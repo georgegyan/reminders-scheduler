@@ -1,9 +1,14 @@
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import redirect, render
 from .models import Reminder
 from .forms import ReminderForm
 
+@login_required
+def profile(request):
+    return render(request, 'profile.html')
 class ReminderListView(LoginRequiredMixin, ListView):
     model = Reminder
     template_name = 'reminders/reminder_list.html'
