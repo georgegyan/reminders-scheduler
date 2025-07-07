@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="card shadow">
+    <div class="card-body">
+        <h2 class="card-title mb-4">
+            {% if object %}Edit{% else %}Add New{% endif %} Reminder
+        </h2>
+        {% crispy form %}
+    </div>
+</div>
+{% endblock %}
